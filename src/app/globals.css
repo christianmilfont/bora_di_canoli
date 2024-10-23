@@ -2,20 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply flex flex-col min-h-screen bg-[#f8f4f1]; /* Cor de fundo suave, semelhante ao fundo do logo */
+}
+
+.links li a {
+  @apply text-[#b56b5f] text-xl; /* Cor da tipografia, semelhante ao tom marrom/cobre do texto "Bora di cannoli" */
+}
+
+table, th, td {
+  @apply border border-spacing-0 border-[#d9a899] text-center; /* Borda em tom pastel suave, similar ao detalhe floral do logo */
+}
+
+th, td {
+  @apply p-1 text-[#b56b5f]; /* Texto das células da tabela no mesmo tom do texto do logo */
+}
+
+.btn {
+  @apply flex gap-2 items-center justify-center py-2 px-4 font-semibold shadow-md rounded-lg;
+}
+
+.btn.btn-light {
+  @apply bg-[#f8f4f1] text-[#b56b5f]; /* Botão claro com fundo bege suave e texto no tom marrom/cobre */
+}
+
+.btn.btn-danger {
+  @apply bg-[#d45d4a] text-white shadow-[#d45d4a]/40; /* Botão de perigo com tom vermelho suave */
 }
